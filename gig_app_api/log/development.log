@@ -1,0 +1,2 @@
+  [1m[35m (1061.8ms)[0m  [1m[35mCREATE DATABASE "gig_app_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (62.7ms)[0m  [1m[35mCREATE DATABASE "gig_app_api_test" ENCODING = 'unicode'[0m
