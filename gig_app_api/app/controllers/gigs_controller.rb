@@ -1,5 +1,5 @@
 class GigsController < ApplicationController
-  before_action :set_gig, only: [:show, :edit, :update, :destroy]
+  before_action :set_gig, only: [ :show, :edit, :update, :destroy]
 
   # GET /gigs
   # GET /gigs.json
