@@ -34,25 +34,18 @@ class GigsController < ApplicationController
   # PATCH/PUT /gigs/1
   # PATCH/PUT /gigs/1.json
   def update
-    respond_to do |format|
       if @gig.update(gig_params)
-        format.html { redirect_to @gig, notice: 'Gig was successfully updated.' }
-        format.json { render :show, status: :ok, location: @gig }
+        render json: @gig
       else
-        format.html { render :edit }
-        format.json { render json: @gig.errors, status: :unprocessable_entity }
+       render json: @gig.errors, status: :unprocessable_entity
       end
-    end
   end
 
   # DELETE /gigs/1
   # DELETE /gigs/1.json
   def destroy
+    puts "deleting a route"
     @gig.destroy
-    respond_to do |format|
-      format.html { redirect_to gigs_url, notice: 'Gig was successfully destroyed.' }
-      format.json { head :no_content }
-    end
   end
 
   private
@@ -63,6 +56,6 @@ class GigsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def gig_params
-      params.require(:gig).permit(:title, :client, :client_contact, :location, :date, :price, :user_id)
+      params.require(:gig).permit(:title, :client, :client_contact, :location, :date, :price, :user_id, :id, :created_at, :updated_at, :time, :user_id)
     end
 end
