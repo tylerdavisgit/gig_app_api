@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   resources :gigs
   resources :users, only: [:index, :show, :update] do
-    resources :gigs, only: [:create, :update]
+    resources :gigs, only: [:create, :update, :index, :show]
   end
   resources :sessions, only: [:create]
   resources :registrations, only: [:create] 

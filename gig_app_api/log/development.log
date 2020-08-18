@@ -55905,3 +55905,2322 @@ Processing by SessionsController#logged_in as HTML
 Completed 200 OK in 45ms (Views: 0.5ms | ActiveRecord: 37.4ms | Allocations: 2364)
 
 
+Started POST "/users/1/gigs/" for ::1 at 2020-08-18 12:57:50 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"title"=>"asdfasdf", "client"=>"asdfasdfasdf", "client_contact"=>"asdfasdfasdf", "location"=>"fdasf", "date"=>"2020-08-22", "price"=>"6000", "time"=>"7pm", "user_id"=>"1", "gig"=>{"title"=>"asdfasdf", "client"=>"asdfasdfasdf", "client_contact"=>"asdfasdfasdf", "location"=>"fdasf", "date"=>"2020-08-22", "price"=>"6000", "time"=>"7pm"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:24:in `block in create'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:24:in `block in create'
+  [1m[36mGig Create (0.5ms)[0m  [1m[32mINSERT INTO "gigs" ("title", "client", "client_contact", "location", "date", "price", "created_at", "updated_at", "user_id", "time") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "asdfasdf"], ["client", "asdfasdfasdf"], ["client_contact", "asdfasdfasdf"], ["location", "fdasf"], ["date", "2020-08-22"], ["price", 6000], ["created_at", "2020-08-18 16:57:50.220613"], ["updated_at", "2020-08-18 16:57:50.220613"], ["user_id", 1], ["time", "7pm"]]
+  ↳ app/controllers/gigs_controller.rb:24:in `block in create'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:24:in `block in create'
+Redirected to http://localhost:3000/gigs/10
+Completed 302 Found in 7ms (ActiveRecord: 1.6ms | Allocations: 4154)
+
+
+Started GET "/gigs/10" for ::1 at 2020-08-18 12:57:50 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"10", "gig"=>{}}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 954)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 12:57:58 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 2592)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 12:59:51 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (12.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 12.5ms | Allocations: 2580)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:01:47 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (14.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 15.6ms | Allocations: 2590)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:02:24 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 2575)
+
+
+Started GET "/gigs/10" for ::1 at 2020-08-18 13:02:35 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 905)
+
+
+Started GET "/gigs/10" for ::1 at 2020-08-18 13:03:54 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mGig Load (1.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 905)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:03:54 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 4.0ms | Allocations: 2588)
+
+
+Started PUT "/users/1/gigs/10" for ::1 at 2020-08-18 13:04:28 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"10", "title"=>"Testing After passing data context", "client"=>"asdfasdfasdf", "client_contact"=>"asdfasdfasdf", "location"=>"fdasf", "date"=>"2020-08-22", "price"=>"20", "created_at"=>"2020-08-18T16:57:50.220Z", "updated_at"=>"2020-08-18T16:57:50.220Z", "user_id"=>"1", "time"=>"7pm", "gig"=>{"id"=>"10", "title"=>"Testing After passing data context", "client"=>"asdfasdfasdf", "client_contact"=>"asdfasdfasdf", "location"=>"fdasf", "date"=>"2020-08-22", "price"=>"20", "created_at"=>"2020-08-18T16:57:50.220Z", "updated_at"=>"2020-08-18T16:57:50.220Z", "user_id"=>"1", "time"=>"7pm"}}
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.4ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "created_at" = $3, "updated_at" = $4 WHERE "gigs"."id" = $5[0m  [["title", "Testing After passing data context"], ["price", 20], ["created_at", "2020-08-18 16:57:50.220000"], ["updated_at", "2020-08-18 16:57:50.220000"], ["id", 10]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 51ms (Views: 0.4ms | ActiveRecord: 41.9ms | Allocations: 4990)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:09:10 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 4.9ms | Allocations: 2591)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:10:26 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 6.2ms | Allocations: 2577)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:11:47 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (7.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 8.0ms | Allocations: 2579)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:11:47 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 2.2ms | Allocations: 2589)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:11:47 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 13ms (Views: 1.0ms | ActiveRecord: 5.7ms | Allocations: 2589)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:11:58 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 13:11:58 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 899)
+
+
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.0ms | Allocations: 2734)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:12:07 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 13:12:07 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (4.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 4.3ms | Allocations: 1906)
+
+
+  [1m[36mGig Load (3.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 16ms (Views: 0.7ms | ActiveRecord: 3.5ms | Allocations: 3615)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:12:08 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.9ms | ActiveRecord: 0.5ms | Allocations: 2583)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:12:08 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.0ms | Allocations: 2583)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:13:01 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 13:13:01 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mGig Load (2.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 2.1ms | Allocations: 1535)
+
+
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (5.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 6.0ms | Allocations: 3573)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:13:01 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (3.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 5.8ms | Allocations: 2597)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:13:01 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2597)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:15:06 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 13:15:06 -0400
+Processing by GigsController#show as HTML
+Processing by SessionsController#logged_in as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (2.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 2.6ms | Allocations: 899)
+
+
+  [1m[36mUser Load (8.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 9.1ms | Allocations: 3742)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:15:06 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.9ms | ActiveRecord: 0.4ms | Allocations: 2583)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:15:06 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 2583)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 13:15:44 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"Testing active user update for load gigs", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"20000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-14T14:57:39.950Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"Testing active user update for load gigs", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"20000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-14T14:57:39.950Z", "user_id"=>"1", "time"=>nil}}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.3ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "date" = $2, "price" = $3, "created_at" = $4, "updated_at" = $5 WHERE "gigs"."id" = $6[0m  [["title", "Testing active user update for load gigs"], ["date", "2020-08-24"], ["price", 20000], ["created_at", "2020-08-14 14:57:39.950000"], ["updated_at", "2020-08-14 14:57:39.950000"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 49ms (Views: 0.4ms | ActiveRecord: 41.4ms | Allocations: 4928)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:15:44 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2586)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:15:44 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 0.5ms | Allocations: 2586)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:15:58 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 4.1ms | Allocations: 2577)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:15:58 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 2576)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:15:58 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 2576)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:16:58 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 14ms (Views: 1.1ms | ActiveRecord: 5.1ms | Allocations: 2590)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:17:09 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.2ms | Allocations: 900)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:18:36 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 13:18:36 -0400
+Processing by GigsController#show as HTML
+Processing by SessionsController#logged_in as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1652)
+
+
+  [1m[36mGig Load (2.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 10ms (Views: 0.6ms | ActiveRecord: 4.0ms | Allocations: 3762)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:19:21 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 13:19:21 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mGig Load (1.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.4ms | Allocations: 1495)
+
+
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 3.6ms | Allocations: 3573)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:23:19 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 13:23:19 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGig Load (3.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 3.0ms | Allocations: 2250)
+
+
+  [1m[36mGig Load (8.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 10.8ms | Allocations: 3607)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 13:23:48 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"Testing setUserGigs for reload", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"5", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-14T14:57:39.950Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"Testing setUserGigs for reload", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"5", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-14T14:57:39.950Z", "user_id"=>"1", "time"=>nil}}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.4ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "Testing setUserGigs for reload"], ["price", 5], ["updated_at", "2020-08-18 17:23:48.750250"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[35m (40.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 50ms (Views: 0.3ms | ActiveRecord: 41.8ms | Allocations: 4906)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 13:23:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/logged_in" for ::1 at 2020-08-18 13:24:13 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 2.0ms | Allocations: 2587)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:27:40 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 2.3ms | Allocations: 2594)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:32:52 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 2576)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:33:27 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 2580)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:33:35 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (1.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 4ms (Views: 0.6ms | ActiveRecord: 1.0ms | Allocations: 900)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 13:33:51 -0400
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 13:33:51 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"Testing setUserGigs 2", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"500", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T17:23:48.750Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"Testing setUserGigs 2", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"500", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T17:23:48.750Z", "user_id"=>"1", "time"=>nil}}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.4ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "Testing setUserGigs 2"], ["price", 500], ["updated_at", "2020-08-18 17:23:48.750000"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 1.5ms | Allocations: 5016)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/logged_in" for ::1 at 2020-08-18 13:34:02 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 14ms (Views: 0.7ms | ActiveRecord: 2.9ms | Allocations: 2724)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:35:15 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (16.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (4.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 35ms (Views: 1.9ms | ActiveRecord: 21.3ms | Allocations: 2580)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 13:35:28 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.9ms | Allocations: 902)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 13:35:36 -0400
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 13:35:36 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"Testing setUserGigs 3", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"20000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T17:23:48.750Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"Testing setUserGigs 3", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"20000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T17:23:48.750Z", "user_id"=>"1", "time"=>nil}}
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mGig Load (22.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.8ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "Testing setUserGigs 3"], ["price", 20000], ["updated_at", "2020-08-18 17:35:36.970955"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 34ms (Views: 0.3ms | ActiveRecord: 25.7ms | Allocations: 36054)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:35:51 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 3.3ms | Allocations: 2589)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:37:16 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 6.4ms | Allocations: 2591)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:38:40 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 2589)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:40:16 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.5ms | ActiveRecord: 1.8ms | Allocations: 2575)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:44:14 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 8ms (Views: 1.0ms | ActiveRecord: 1.0ms | Allocations: 2579)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:45:29 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (5.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 17ms (Views: 0.7ms | ActiveRecord: 7.3ms | Allocations: 2581)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:46:40 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 4.6ms | Allocations: 2581)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:47:16 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (14.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 22ms (Views: 1.0ms | ActiveRecord: 15.2ms | Allocations: 2589)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:51:17 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 3.1ms | Allocations: 2584)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:51:41 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (10.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 18ms (Views: 0.7ms | ActiveRecord: 12.9ms | Allocations: 2591)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 13:52:06 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 4.5ms | Allocations: 2583)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 14:55:50 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.4ms | Allocations: 2733)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 14:57:41 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 2.2ms | Allocations: 2579)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:02:36 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (18.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 26ms (Views: 0.8ms | ActiveRecord: 18.6ms | Allocations: 2579)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:02:42 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 1.1ms | ActiveRecord: 1.4ms | Allocations: 2575)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:04:01 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 2.4ms | Allocations: 2586)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:10:25 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 13ms (Views: 0.4ms | ActiveRecord: 5.4ms | Allocations: 2737)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:12:59 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 0.9ms | ActiveRecord: 2.5ms | Allocations: 2589)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:13:36 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 1.6ms | Allocations: 2585)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:13:58 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 8ms (Views: 0.7ms | ActiveRecord: 2.5ms | Allocations: 2579)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:14:36 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 902)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:14:49 -0400
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:14:49 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"Testing setUserGigs 4 after lunch", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"5", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T17:35:36.970Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"Testing setUserGigs 4 after lunch", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"5", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T17:35:36.970Z", "user_id"=>"1", "time"=>nil}}
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.5ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "Testing setUserGigs 4 after lunch"], ["price", 5], ["updated_at", "2020-08-18 17:35:36.970000"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[35m (47.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 60ms (Views: 0.4ms | ActiveRecord: 49.1ms | Allocations: 55404)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:15:19 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 13ms (Views: 0.7ms | ActiveRecord: 4.1ms | Allocations: 2734)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:15:25 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 4ms (Views: 0.5ms | ActiveRecord: 0.5ms | Allocations: 903)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:15:42 -0400
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:15:42 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"Testing setUserGigs 5 after lunch", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"50000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T17:35:36.970Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"Testing setUserGigs 5 after lunch", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"50000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T17:35:36.970Z", "user_id"=>"1", "time"=>nil}}
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+  [1m[36mGig Load (19.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.5ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "Testing setUserGigs 5 after lunch"], ["price", 50000], ["updated_at", "2020-08-18 19:15:42.901817"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 21.1ms | Allocations: 32675)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:16:23 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (3.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 15ms (Views: 0.5ms | ActiveRecord: 4.5ms | Allocations: 2589)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:16:32 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 900)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:16:40 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"Testing setUserGigs 6 after lunch", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"5", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:15:42.901Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"Testing setUserGigs 6 after lunch", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"5", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:15:42.901Z", "user_id"=>"1", "time"=>nil}}
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.4ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "Testing setUserGigs 6 after lunch"], ["price", 5], ["updated_at", "2020-08-18 19:15:42.901000"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 1.9ms | Allocations: 4888)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:16:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/logged_in" for ::1 at 2020-08-18 15:17:43 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (3.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 12ms (Views: 0.8ms | ActiveRecord: 6.4ms | Allocations: 2578)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:17:47 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 900)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:17:56 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"Testing setUserGigs 7 after lunch", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"50000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:15:42.901Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"Testing setUserGigs 7 after lunch", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"50000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:15:42.901Z", "user_id"=>"1", "time"=>nil}}
+  [1m[36mGig Load (1.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:54:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[36mGig Update (0.3ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "Testing setUserGigs 7 after lunch"], ["price", 50000], ["updated_at", "2020-08-18 19:17:56.092777"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:37:in `update'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 4902)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:17:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:22:21 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:22:36 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:24:36 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:25:46 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:27:10 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+  end
+  ^~~
+):
+  
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:28:01 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:30:18 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+  end
+  ^~~
+):
+  
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:30:57 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+  end
+  ^~~
+):
+  
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:59: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:34:51 -0400
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:56: syntax error, unexpected `end', expecting end-of-input):
+  
+app/controllers/gigs_controller.rb:56: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:56: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:56: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:35:50 -0400
+  
+SyntaxError (/Users/tylerdavis/Desktop/seir_526/FINAL_PROJECT_GIG_APP/gig_app_api/gig_app_api/app/controllers/gigs_controller.rb:56: syntax error, unexpected `end', expecting end-of-input
+  end
+  ^~~
+):
+  
+app/controllers/gigs_controller.rb:56: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:56: syntax error, unexpected `end', expecting end-of-input
+app/controllers/gigs_controller.rb:56: syntax error, unexpected `end', expecting end-of-input
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:39:02 -0400
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 91ms (Views: 0.7ms | ActiveRecord: 3.7ms | Allocations: 8684)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:39:38 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"TEST 3:39pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"100", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:17:56.092Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"TEST 3:39pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"100", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:17:56.092Z", "user_id"=>"1", "time"=>nil}}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mGig Update (0.3ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "TEST 3:39pm"], ["price", 100], ["updated_at", "2020-08-18 19:17:56.092000"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[35m (40.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+Completed 200 OK in 93ms (Views: 0.4ms | ActiveRecord: 43.9ms | Allocations: 12908)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:39:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:40:26 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 20ms (Views: 0.7ms | ActiveRecord: 2.5ms | Allocations: 7456)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:40:29 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"TEST 3:39pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>100, "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:17:56.092Z", "user_id"=>"1", "time"=>nil, "gig"=>{"id"=>"6", "title"=>"TEST 3:39pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>100, "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:17:56.092Z", "user_id"=>"1", "time"=>nil}}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+Completed 200 OK in 24ms (Views: 0.7ms | ActiveRecord: 5.0ms | Allocations: 8370)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:40:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/users/1/gigs"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.4) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.4) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.4) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+rack-cors (1.1.1) lib/rack/cors.rb:100:in `call'
+webpacker (4.2.2) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/logged_in" for ::1 at 2020-08-18 15:41:45 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 55ms (Views: 0.4ms | ActiveRecord: 6.6ms | Allocations: 14065)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:41:47 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.2ms | Allocations: 1058)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:42:01 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"TEST 3:41pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"500", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:17:56.092Z", "user_id"=>"1", "time"=>"3:41", "gig"=>{"id"=>"6", "title"=>"TEST 3:41pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"500", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:17:56.092Z", "user_id"=>"1", "time"=>"3:41"}}
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mGig Update (0.5ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3, "time" = $4 WHERE "gigs"."id" = $5[0m  [["title", "TEST 3:41pm"], ["price", 500], ["updated_at", "2020-08-18 19:42:01.114448"], ["time", "3:41"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+Completed 200 OK in 27ms (Views: 0.9ms | ActiveRecord: 2.0ms | Allocations: 5153)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:42:01 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (2.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 2.2ms | Allocations: 1650)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:45:15 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (5.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 15ms (Views: 0.7ms | ActiveRecord: 8.3ms | Allocations: 2612)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:45:37 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (3.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 15ms (Views: 0.8ms | ActiveRecord: 6.4ms | Allocations: 2588)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:46:20 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.4ms | Allocations: 905)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:46:33 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"TEST 3:45pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"20000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:42:01.114Z", "user_id"=>"1", "time"=>"3:45", "gig"=>{"id"=>"6", "title"=>"TEST 3:45pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"20000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:42:01.114Z", "user_id"=>"1", "time"=>"3:45"}}
+  [1m[36mGig Load (0.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mGig Update (0.7ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3, "time" = $4 WHERE "gigs"."id" = $5[0m  [["title", "TEST 3:45pm"], ["price", 20000], ["updated_at", "2020-08-18 19:42:01.114000"], ["time", "3:45"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 2.4ms | Allocations: 4912)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:46:33 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (0.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 1648)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:46:48 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (35.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 44ms (Views: 1.1ms | ActiveRecord: 36.3ms | Allocations: 2595)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:46:53 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 905)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:47:11 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"TEST 2 at  3:45pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"50000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:42:01.114Z", "user_id"=>"1", "time"=>"3:45", "gig"=>{"id"=>"6", "title"=>"TEST 2 at  3:45pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"50000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:42:01.114Z", "user_id"=>"1", "time"=>"3:45"}}
+  [1m[36mGig Load (0.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mGig Update (0.5ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3 WHERE "gigs"."id" = $4[0m  [["title", "TEST 2 at  3:45pm"], ["price", 50000], ["updated_at", "2020-08-18 19:47:11.577841"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 1.7ms | Allocations: 4912)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:47:11 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 1648)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:48:41 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (3.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 16ms (Views: 0.6ms | ActiveRecord: 9.1ms | Allocations: 2583)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:48:46 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (1.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 1.5ms | Allocations: 905)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:49:04 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"3:48pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"10000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:47:11.577Z", "user_id"=>"1", "time"=>"3:48", "gig"=>{"id"=>"6", "title"=>"3:48pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"10000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:47:11.577Z", "user_id"=>"1", "time"=>"3:48"}}
+  [1m[36mGig Load (1.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mGig Update (0.5ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3, "time" = $4 WHERE "gigs"."id" = $5[0m  [["title", "3:48pm"], ["price", 10000], ["updated_at", "2020-08-18 19:47:11.577000"], ["time", "3:48"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+Completed 200 OK in 21ms (Views: 0.9ms | ActiveRecord: 3.5ms | Allocations: 4911)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:49:04 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 1648)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:50:05 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (8.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 20ms (Views: 0.8ms | ActiveRecord: 12.1ms | Allocations: 2589)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:52:26 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (31.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 46ms (Views: 1.1ms | ActiveRecord: 31.6ms | Allocations: 2593)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 15:52:28 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.6ms | Allocations: 905)
+
+
+Started PUT "/users/1/gigs/6" for ::1 at 2020-08-18 15:52:42 -0400
+Processing by GigsController#update as HTML
+  Parameters: {"id"=>"6", "title"=>"3:52pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"50000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:47:11.577Z", "user_id"=>"1", "time"=>"3:52", "gig"=>{"id"=>"6", "title"=>"3:52pm", "client"=>"Koji", "client_contact"=>"koji@koji.com", "location"=>"Jays Kitchen", "date"=>"2020-08-24", "price"=>"50000", "created_at"=>"2020-08-14T14:57:39.950Z", "updated_at"=>"2020-08-18T19:47:11.577Z", "user_id"=>"1", "time"=>"3:52"}}
+  [1m[36mGig Load (0.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[36mGig Update (0.8ms)[0m  [1m[33mUPDATE "gigs" SET "title" = $1, "price" = $2, "updated_at" = $3, "time" = $4 WHERE "gigs"."id" = $5[0m  [["title", "3:52pm"], ["price", 50000], ["updated_at", "2020-08-18 19:52:42.040777"], ["time", "3:52"], ["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:32:in `update'
+Completed 200 OK in 22ms (Views: 0.7ms | ActiveRecord: 3.6ms | Allocations: 4921)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 15:52:42 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 1648)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:56:07 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 3.9ms | Allocations: 2595)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:56:08 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (7.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 17ms (Views: 0.6ms | ActiveRecord: 10.2ms | Allocations: 2601)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:56:09 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (19.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (7.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 34ms (Views: 0.7ms | ActiveRecord: 26.1ms | Allocations: 2590)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:56:11 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 11ms (Views: 0.8ms | ActiveRecord: 3.9ms | Allocations: 2589)
+
+
+Started POST "/users/1/gigs/" for ::1 at 2020-08-18 15:56:48 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"title"=>"Create 3:56", "client"=>"adsf", "client_contact"=>"asdf", "location"=>"asdf", "date"=>"asdf", "price"=>"450", "time"=>"", "user_id"=>"1", "gig"=>{"title"=>"Create 3:56", "client"=>"adsf", "client_contact"=>"asdf", "location"=>"asdf", "date"=>"asdf", "price"=>"450", "time"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[36mGig Create (0.5ms)[0m  [1m[32mINSERT INTO "gigs" ("title", "client", "client_contact", "location", "price", "created_at", "updated_at", "user_id", "time") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["title", "Create 3:56"], ["client", "adsf"], ["client_contact", "asdf"], ["location", "asdf"], ["price", 450], ["created_at", "2020-08-18 19:56:48.116206"], ["updated_at", "2020-08-18 19:56:48.116206"], ["user_id", 1], ["time", ""]]
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[35m (39.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  Rendering gigs/show.html.erb within layouts/application
+  Rendered gigs/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 340)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 201 Created in 125ms (Views: 73.3ms | ActiveRecord: 40.4ms | Allocations: 25710)
+
+
+Started POST "/users/1/gigs/" for ::1 at 2020-08-18 15:57:13 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"title"=>"Create 3:56", "client"=>"asdf", "client_contact"=>"asdf", "location"=>"asdf", "date"=>"2020-08-8", "price"=>"500", "time"=>"", "user_id"=>"1", "gig"=>{"title"=>"Create 3:56", "client"=>"asdf", "client_contact"=>"asdf", "location"=>"asdf", "date"=>"2020-08-8", "price"=>"500", "time"=>""}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[36mGig Create (0.3ms)[0m  [1m[32mINSERT INTO "gigs" ("title", "client", "client_contact", "location", "date", "price", "created_at", "updated_at", "user_id", "time") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Create 3:56"], ["client", "asdf"], ["client_contact", "asdf"], ["location", "asdf"], ["date", "2020-08-08"], ["price", 500], ["created_at", "2020-08-18 19:57:13.035672"], ["updated_at", "2020-08-18 19:57:13.035672"], ["user_id", 1], ["time", ""]]
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[35m (39.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  Rendering gigs/show.html.erb within layouts/application
+  Rendered gigs/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 84)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 201 Created in 52ms (Views: 6.3ms | ActiveRecord: 40.5ms | Allocations: 7844)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 15:58:03 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (50.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 57ms (Views: 0.5ms | ActiveRecord: 50.8ms | Allocations: 3004)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:03:15 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 8ms (Views: 1.3ms | ActiveRecord: 1.2ms | Allocations: 3011)
+
+
+Started GET "/gigs" for ::1 at 2020-08-18 16:03:27 -0400
+Processing by GigsController#index as HTML
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.8ms | ActiveRecord: 0.4ms | Allocations: 2085)
+
+
+Started DELETE "/gigs/11" for ::1 at 2020-08-18 16:03:39 -0400
+Processing by GigsController#destroy as */*
+  Parameters: {"playlist"=>{"song_title"=>"Cissy Strut", "artist"=>"The Meters", "duration"=>"3:15", "Is_Fave"=>"!Is_Fave"}, "id"=>"11"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[36mGig Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gigs" WHERE "gigs"."id" = $1[0m  [["id", 11]]
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[35m (40.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+No template found for GigsController#destroy, rendering head :no_content
+Completed 204 No Content in 48ms (ActiveRecord: 41.3ms | Allocations: 4175)
+
+
+Started GET "/gigs" for ::1 at 2020-08-18 16:03:42 -0400
+Processing by GigsController#index as HTML
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1919)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:03:46 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (22.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (3.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 35ms (Views: 0.8ms | ActiveRecord: 25.6ms | Allocations: 2797)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:06:14 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 15ms (Views: 0.6ms | ActiveRecord: 7.3ms | Allocations: 2799)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:07:29 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (10.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 18ms (Views: 0.8ms | ActiveRecord: 12.2ms | Allocations: 2799)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:08:03 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (29.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 40ms (Views: 0.9ms | ActiveRecord: 31.9ms | Allocations: 2799)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:08:22 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (37.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 45ms (Views: 0.8ms | ActiveRecord: 39.0ms | Allocations: 2797)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:11:26 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.2ms | Allocations: 2807)
+
+
+Started GET "/gigs/12" for ::1 at 2020-08-18 16:12:08 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 905)
+
+
+Started DELETE "/gigs/12" for ::1 at 2020-08-18 16:12:10 -0400
+Processing by GigsController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[36mGig Destroy (0.3ms)[0m  [1m[31mDELETE FROM "gigs" WHERE "gigs"."id" = $1[0m  [["id", 12]]
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+No template found for GigsController#destroy, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 1.2ms | Allocations: 3179)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:12:19 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 10ms (Views: 0.8ms | ActiveRecord: 3.6ms | Allocations: 2596)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:15:11 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 20ms (Views: 0.4ms | ActiveRecord: 13.7ms | Allocations: 2589)
+
+
+Started GET "/gigs/10" for ::1 at 2020-08-18 16:15:20 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 906)
+
+
+Started DELETE "/gigs/10" for ::1 at 2020-08-18 16:15:23 -0400
+Processing by GigsController#destroy as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[36mGig Destroy (0.6ms)[0m  [1m[31mDELETE FROM "gigs" WHERE "gigs"."id" = $1[0m  [["id", 10]]
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+No template found for GigsController#destroy, rendering head :no_content
+Completed 204 No Content in 6ms (ActiveRecord: 1.5ms | Allocations: 2643)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 16:15:23 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1465)
+
+
+Started GET "/gigs/6" for ::1 at 2020-08-18 16:15:28 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 2ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 906)
+
+
+Started DELETE "/gigs/6" for ::1 at 2020-08-18 16:15:29 -0400
+Processing by GigsController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[36mGig Destroy (0.2ms)[0m  [1m[31mDELETE FROM "gigs" WHERE "gigs"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+No template found for GigsController#destroy, rendering head :no_content
+Completed 204 No Content in 8ms (ActiveRecord: 2.7ms | Allocations: 2643)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 16:15:30 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (0.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.6ms | Allocations: 1282)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:18:46 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (36.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (7.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 48ms (Views: 0.3ms | ActiveRecord: 43.8ms | Allocations: 2168)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:20:55 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (6.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (4.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 21ms (Views: 1.0ms | ActiveRecord: 10.6ms | Allocations: 2166)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:28:16 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 2.8ms | Allocations: 2320)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:28:56 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 14ms (Views: 0.5ms | ActiveRecord: 7.7ms | Allocations: 2152)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:31:35 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.8ms | ActiveRecord: 1.5ms | Allocations: 2165)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:32:19 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (7.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (12.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 27ms (Views: 0.7ms | ActiveRecord: 19.4ms | Allocations: 2158)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:32:25 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (4.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 5.2ms | Allocations: 2166)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:33:31 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 4.2ms | Allocations: 2156)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:33:37 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.2ms | Allocations: 908)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:34:45 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 16:34:45 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGig Load (4.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 4.0ms | Allocations: 905)
+
+
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 13.0ms | Allocations: 2308)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:35:12 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 16:35:12 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mGig Load (1.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 15ms (Views: 1.2ms | ActiveRecord: 1.4ms | Allocations: 1336)
+
+
+  [1m[36mUser Load (78.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 86ms (Views: 0.5ms | ActiveRecord: 81.2ms | Allocations: 3198)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:36:43 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 16:36:43 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mGig Load (7.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 11ms (Views: 0.5ms | ActiveRecord: 7.1ms | Allocations: 1517)
+
+
+  [1m[36mUser Load (22.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 30ms (Views: 0.7ms | ActiveRecord: 24.3ms | Allocations: 3164)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:37:45 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 16:37:45 -0400
+Processing by SessionsController#logged_in as HTML
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (8.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (7.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 12ms (Views: 1.0ms | ActiveRecord: 7.4ms | Allocations: 1404)
+
+
+  [1m[36mGig Load (52.9ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 72ms (Views: 0.5ms | ActiveRecord: 61.4ms | Allocations: 3346)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:38:10 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+Started GET "/logged_in" for ::1 at 2020-08-18 16:38:10 -0400
+  [1m[36mGig Load (19.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 23ms (Views: 0.6ms | ActiveRecord: 19.2ms | Allocations: 1671)
+
+
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (14.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 15.0ms | Allocations: 2158)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:40:19 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 16:40:19 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mGig Load (1.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 1.5ms | Allocations: 1141)
+
+
+  [1m[36mGig Load (14.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 24ms (Views: 0.5ms | ActiveRecord: 15.3ms | Allocations: 3192)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:40:47 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 16:40:47 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (32.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (35.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 35.8ms | Allocations: 2096)
+
+
+  [1m[36mGig Load (2.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 34.8ms | Allocations: 3198)
+
+
+Started GET "/gigs/4" for ::1 at 2020-08-18 16:41:08 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 16:41:08 -0400
+Processing by SessionsController#logged_in as HTML
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (14.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 6ms (Views: 0.6ms | ActiveRecord: 2.7ms | Allocations: 1656)
+
+
+  [1m[36mGig Load (19.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 40ms (Views: 0.5ms | ActiveRecord: 33.8ms | Allocations: 3750)
+
+
+Started DELETE "/gigs/4" for ::1 at 2020-08-18 16:45:55 -0400
+Processing by GigsController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[36mGig Destroy (1.1ms)[0m  [1m[31mDELETE FROM "gigs" WHERE "gigs"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:42:in `destroy'
+No template found for GigsController#destroy, rendering head :no_content
+Completed 204 No Content in 9ms (ActiveRecord: 3.8ms | Allocations: 2644)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 16:45:55 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1102)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:47:41 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 22ms (Views: 0.6ms | ActiveRecord: 14.1ms | Allocations: 1955)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:48:19 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (27.8ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 38ms (Views: 0.3ms | ActiveRecord: 30.6ms | Allocations: 1946)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:48:32 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 2.9ms | Allocations: 1958)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:49:09 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (11.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 19ms (Views: 0.9ms | ActiveRecord: 12.0ms | Allocations: 1946)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:51:03 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (5.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 14ms (Views: 0.3ms | ActiveRecord: 6.7ms | Allocations: 1958)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:53:27 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (9.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (4.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 19ms (Views: 0.8ms | ActiveRecord: 13.2ms | Allocations: 1946)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:56:16 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (10.5ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 11.3ms | Allocations: 1954)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:57:45 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (20.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (9.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 30.0ms | Allocations: 1950)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 16:58:33 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 10ms (Views: 0.5ms | ActiveRecord: 4.5ms | Allocations: 1951)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:00:35 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (12.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 19ms (Views: 0.3ms | ActiveRecord: 13.7ms | Allocations: 1946)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:00:35 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.8ms | Allocations: 1948)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:00:35 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 1948)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:03:04 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (1.6ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.0ms | Allocations: 1946)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:03:04 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1956)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:03:04 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 2.2ms | Allocations: 1948)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:05:55 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1948)
+
+
+Started POST "/users/1/gigs/" for ::1 at 2020-08-18 17:06:55 -0400
+Processing by GigsController#create as HTML
+  Parameters: {"title"=>"Jay's Gig", "client"=>"Koji", "client_contact"=>"Koji", "location"=>"Jay's Kitchen - Goldsboro", "date"=>"2020-09-04", "price"=>"300", "time"=>"7 pm", "user_id"=>"1", "gig"=>{"title"=>"Jay's Gig", "client"=>"Koji", "client_contact"=>"Koji", "location"=>"Jay's Kitchen - Goldsboro", "date"=>"2020-09-04", "price"=>"300", "time"=>"7 pm"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[36mGig Create (0.5ms)[0m  [1m[32mINSERT INTO "gigs" ("title", "client", "client_contact", "location", "date", "price", "created_at", "updated_at", "user_id", "time") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["title", "Jay's Gig"], ["client", "Koji"], ["client_contact", "Koji"], ["location", "Jay's Kitchen - Goldsboro"], ["date", "2020-09-04"], ["price", 300], ["created_at", "2020-08-18 21:06:55.255893"], ["updated_at", "2020-08-18 21:06:55.255893"], ["user_id", 1], ["time", "7 pm"]]
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  [1m[35m (140.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/gigs_controller.rb:22:in `create'
+  Rendering gigs/show.html.erb within layouts/application
+  Rendered gigs/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 77)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 201 Created in 154ms (Views: 7.1ms | ActiveRecord: 141.5ms | Allocations: 7813)
+
+
+Started GET "/users/1/gigs" for ::1 at 2020-08-18 17:06:55 -0400
+Processing by GigsController#index as HTML
+  Parameters: {"user_id"=>"1"}
+  [1m[36mGig Load (0.7ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs"[0m
+Started GET "/logged_in" for ::1 at 2020-08-18 17:06:55 -0400
+  ↳ app/controllers/gigs_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 1905)
+
+
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 2161)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:06:55 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.1ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 2151)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:07:12 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2167)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:07:17 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 2171)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:07:40 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 2162)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:08:11 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.5ms | Allocations: 2163)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:08:11 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 2167)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:08:11 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 0.4ms | Allocations: 2170)
+
+
+Started GET "/gigs/13" for ::1 at 2020-08-18 17:08:29 -0400
+Started GET "/logged_in" for ::1 at 2020-08-18 17:08:29 -0400
+Processing by GigsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/gigs_controller.rb:48:in `set_gig'
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 911)
+
+
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2313)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:08:38 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2171)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:08:45 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 2163)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:09:27 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (2.0ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 9ms (Views: 0.7ms | ActiveRecord: 2.4ms | Allocations: 2163)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:09:27 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.4ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.6ms | Allocations: 2163)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:09:27 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 2163)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:31:56 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.3ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.7ms | Allocations: 2304)
+
+
+Started GET "/logged_in" for ::1 at 2020-08-18 17:31:59 -0400
+Processing by SessionsController#logged_in as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/concerns/current_user_concern.rb:10:in `set_current_user'
+  [1m[36mGig Load (0.2ms)[0m  [1m[34mSELECT "gigs".* FROM "gigs" WHERE "gigs"."user_id" = $1[0m  [["user_id", 1]]
+  ↳ app/controllers/sessions_controller.rb:24:in `logged_in'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 2167)
+
+

@@ -19,16 +19,11 @@ class GigsController < ApplicationController
   def create
     @gig = Gig.new(gig_params)
     @gig.user_id = params[:user_id]
-
-    respond_to do |format|
       if @gig.save
-        format.html { redirect_to @gig, notice: 'Gig was successfully created.' }
-        format.json { render :show, status: :created, location: @gig }
+        render :show, status: :created, location: @gig
       else
-        format.html { render :new }
-        format.json { render json: @gig.errors, status: :unprocessable_entity }
+        render json: @gig.errors, status: :unprocessable_entity 
       end
-    end
   end
 
   # PATCH/PUT /gigs/1
@@ -44,7 +39,6 @@ class GigsController < ApplicationController
   # DELETE /gigs/1
   # DELETE /gigs/1.json
   def destroy
-    puts "deleting a route"
     @gig.destroy
   end
 
@@ -58,4 +52,5 @@ class GigsController < ApplicationController
     def gig_params
       params.require(:gig).permit(:title, :client, :client_contact, :location, :date, :price, :user_id, :id, :created_at, :updated_at, :time, :user_id)
     end
+
 end
